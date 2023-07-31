@@ -1,0 +1,23 @@
+{
+  "name": "mfe-vite-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:host": "cd host-app && npm run build",
+    "build:remote": "cd remote-app && npm run build",
+    "build": "concurrently \"npm run build:host\" \"npm run build:remote\"",
+    "serve:host": "cd host-app && npm run serve",
+    "serve:remote": "cd remote-app && npm run serve",
+    "serve": "concurrently \"npm run serve:host\" \"npm run serve:remote\"",
+    "stop": "kill-port --port 5000,5001"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "kill-port": "^2.0.1"
+  }
+}
